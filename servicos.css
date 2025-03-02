@@ -1,0 +1,261 @@
+.servicos-page {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.servicos-prestados {
+    text-align: center;
+    color: #125f6b;
+    font-size: 2rem;
+    margin-top: 220px;
+    margin-bottom: 20px;
+}
+
+.frase-container {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 50px;
+    font-style: italic;
+    color: #666;
+}
+
+.frases {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.autor {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.servicos-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.servico-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.servico-item:nth-child(even) {
+    direction: rtl;
+}
+
+.servico-item:nth-child(even) .servico-content {
+    direction: ltr;
+}
+
+.servico-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.servico-content {
+    padding: 20px;
+}
+
+.servico-content h3 {
+    color: #125f6b;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.servico-content p {
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .servico-item {
+        grid-template-columns: 1fr;
+    }
+
+    .servico-item:nth-child(even) {
+        direction: ltr;
+    }
+
+    .servico-img {
+        height: 200px;
+    }
+    .servico-content {
+        padding: 15px; /* Diminui o padding */
+    }
+    .servico-content h3 {
+        font-size: 1rem; /* Diminui o tamanho do título */
+    }
+
+    .servico-content p {
+        font-size: 0.85rem; /* Diminui o tamanho do texto */
+    }
+}
+
+
+
+
+
+
+
+.servicos-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.servicos-title {
+    color: #4a6fa5;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.servicos-intro {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.servicos-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    background-color: #e7e5e1;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #4a6fa5;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.capacitacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.capacitacao-item {
+    background-color: #f5f0e8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.capacitacao-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.accordion-item {
+    border: 0 2px solid #bebebe;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: all 0.4s ease-in-out;
+}
+
+.accordion-header {
+    padding: 15px;
+    background-color: #125f6b;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #e67e22;
+}
+
+.accordion-header::after {
+    content: "▼";
+    font-size: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.accordion-item.active .accordion-header::after {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: white;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 800px;
+    padding: 15px;
+}
+
+.title-accordion-section{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 55px;
+    font-size: 24px;
+    color: #125f6b;
+    margin-bottom: 10px;
+    transition: font-size 0.3s ease;
+    
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .accordion {
+        max-width: 100%;
+    }
+
+    .accordion-header {
+        font-size: 1rem;
+    }
+
+    .accordion-content {
+        font-size: 0.9rem;
+    }
+}
