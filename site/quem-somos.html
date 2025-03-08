@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seniormente</title>
+    <title>Quem Somos-Seniormente</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quem-somos.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="team-section.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <a href="index.html" class="logo-link">
-                <img class="logo" src="/logo.png" alt="SéniorMente Logo">
+                <img class="logo" id="logo" src="/logo.png" alt="SéniorMente Logo">
             </a>
             <button class="menu-toggle" aria-label="Abrir menu">
                 <span></span>
@@ -23,7 +25,16 @@
             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li class="dropdown">
+                        <a href="quem-somos.html">Quem Somos</a>
+                        <ul class="dropdown-content">
+                            <li><a href="quem-somos.html#como-nasceu">Como Nasceu</a></li>
+                            <li><a href="quem-somos.html#objetivo">Objetivo</a></li>
+                            <li><a href="quem-somos.html#equipa">Equipa</a></li>
+                            <li><a href="quem-somos.html#areas-atuacao">Áreas de Atuação</a></li>
+                            <li><a href="quem-somos.html#missao-visao-valores">Missão | Visão | Valores</a></li>
+                        </ul>
+                    </li>
                     <li><a href="servicos.html">Serviços</a></li>
                     <li><a href="eventos.html">Media & Eventos</a></li>
                     <li><a href="viver-melhor.html">Viver Melhor</a></li>
@@ -33,6 +44,169 @@
             </div>
         </nav>
     </header>
+
+
+    <h1 class="servicos-prestados">Quem Somos</h1>
+   
+    <main class="servicos-page">
+
+        <section class="servicos-grid">
+            <div class="servico-item">
+                
+                <div class="servico-content">
+                    <h3>Como Nasceu</h3>
+                    <p>
+                        O Projeto <strong>SéniorMente</strong> é uma iniciativa liderada por <strong>Ana Soares</strong>, uma profissional com formação em
+                        Economia e Gerontologia Social que em 2018 passou por uma tragédia pessoal com a perda do seu
+                        filho mais novo, o que a levou a repensar a sua carreira e dedicar-se ao trabalho com idosos. <br>
+                        O projeto nasce da necessidade de promover o envelhecimento ativo e saudável, bem como de
+                        enfrentar os desafios sociais e de saúde que afetam a população idosa em Portugal.
+                        A Ana percebeu a necessidade de profissionais sensíveis às questões do envelhecimento e dos direitos
+                        das pessoas idosas, devido ao aumento do índice de dependência dos idosos e às falhas das políticas
+                        sociais voltadas para essa classe.
+                    </p>
+                    
+                </div><img src="/consulta.png" alt="Consulta Gerontológica" class="servico-img">
+            </div>
+        
+        
+
+            
+                <div class="servico-item">
+                    
+                    <div class="servico-content">
+                        <h3>Objetivo</h3>
+        
+                        <p>
+                            O objetivo geral do projeto <strong>SéniorMente</strong> é oferecer serviços direcionados para o público sénior,
+                            prestados por gerontologos, especialistas no envelhecimento, com o intuito de promover o
+                            envelhecimento ativo, saudável e bem-sucedido retardando dessa forma o aparecimento de
+                            incapacidades físicas e cognitivas.
+                            Além disso, o projeto também visa fornecer apoio aos cuidadores formais e informais, oferecendo
+                            consultoria gerontológica para orientações específicas sobre os cuidados diretos aos idosos.
+                        </p>
+                    </div>
+                    <img src="/estimulacao.png" alt="Estimulação Cognitiva" class="servico-img">
+                </div>
+                <div class="frase-container">
+                    <i class="frases">“Quando a velhice chegar, aceita-a, ama-a. Ela é abundante em prazeres se souberes amá-la. Os anos
+                        que vão gradualmente declinando estão entre os mais doces da vida de um homem. Mesmo quando
+                        tenhas alcançado o limite extremo dos anos, estes ainda reservam prazeres.”</i>
+                    <p class="autor">Sêneca</p>
+                </div> 
+                 
+        </section>
+
+        
+    </main>
+    <section class="equipe-section" id="equipe-section">
+        <h2 class="equipe-title">Nossa Equipe</h2>
+        
+        <div class="equipe-container">
+          
+          
+          <!-- Container para os membros da equipe -->
+          <div class="membros-container">
+            <!-- Ana Soares -->
+            <div class="equipe-membro" id="membro-1">
+              <div class="foto-container">
+                <div class="foto-wrapper">
+                  <img src="/ana.jpg" alt="Ana Soares" class="foto-membro">
+                </div>
+              </div>
+              <div class="info-membro">
+                <h3>Ana Soares</h3>
+                <h4>Gerontóloga Social</h4>
+                <div class="bio">
+                  <h5>Formação Acadêmica</h5>
+                  <ul>
+                    <li>2019/22 Licenciatura Gerontologia Social</li>
+                    <li>Curso Formação de Formadores (ENA) F632427/2015</li>
+                  </ul>
+                  
+                  <h5>Especializações</h5>
+                  <ul>
+                    <li>Especialização avançada em terapia assistida por animais - CRIAP</li>
+                    <li>Especialização Avançada em Psicogerontologia e Psicogeriatria - CRIAP</li>
+                    <li>Especialização Avançada em Multisseensorial – CRIAP</li>
+                    <li>Certificado International Snoezelen Association ISNA-MS</li>
+                  </ul>
+                  
+                  <h5>Formações Complementares</h5>
+                  <ul>
+                    <li>Formação Profissional de doença de Alzheimer: caracterização e intervenção - Cognos</li>
+                    <li>Estimulação sensorial nas demências – Reconstruir</li>
+                    <li>Formação Profissional de Cuidadores Informais – Evolui-com</li>
+                    <li>Luto: avaliar e intervir – Reconstruir</li>
+                    <li>Formação em terapias artísticas e expressivas</li>
+                    <li>Metodologia de cuidados Humanitude em pessoas idosas ISSSP</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Painel de navegação (agora limitado à seção) -->
+          <div class="equipe-nav">
+            <ul>
+              <li class="active" data-index="0">Ana Soares</li>
+              <li data-index="1">Mónica Henriques</li>
+            </ul>
+          </div>
+            
+            <!-- Mónica Henriques -->
+            <div class="equipe-membro" id="membro-2">
+              <div class="foto-container">
+                <div class="foto-wrapper">
+                  <img src="/monica.png" alt="Mónica Henriques" class="foto-membro">
+                </div>
+              </div>
+              <div class="info-membro">
+                <h3>Mónica Henriques</h3>
+                <h4>Gerontóloga Social</h4>
+                <div class="bio">
+                  <h5>Formação Acadêmica</h5>
+                  <ul>
+                    <li>2019/22 Licenciatura Gerontologia Social</li>
+                    <li>Pós-Graduação Psicogerontologia ISPA</li>
+                  </ul>
+                  
+                  <h5>Formações Complementares</h5>
+                  <ul>
+                    <li>Formação "Direitos das Pessoas com Demência", INR/Alzheimer Portugal</li>
+                    <li>Curso "Terapia Assistida por Animais-Cães/Cavalos" + estágio, Nubika</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+   <section class="container">
+            <div class="card" id="missao">
+                <h2>Missão</h2>
+                <p>Prestar serviços de apoio social a pessoas idosas, proporcionando aumento do bem-estar, desenvolvimento pessoal e qualidade de vida, com foco no conforto dos clientes.</p>
+            </div>
+            <div class="card" id="visao">
+                <h2>Visão</h2>
+                <p>Tornar-se uma empresa de referência na prestação de serviços gerontológicos, proporcionando aos idosos e suas famílias melhor qualidade de vida no ambiente familiar.</p>
+            </div>
+            <div class="card" id="valores">
+                <h2>Valores</h2>
+                <ul>
+                    <li><strong>Respeito à Individualidade e Privacidade:</strong> Garantimos a independência e a privacidade de cada cliente.</li>
+                    <li><strong>Promoção do Envelhecimento Ativo:</strong> Encorajamos práticas que favoreçam a autonomia.</li>
+                    <li><strong>Humanização nos Cuidados:</strong> Valorizamos a empatia e o respeito mútuo.</li>
+                    <li><strong>Foco na Pessoa:</strong> Colocamos o bem-estar e as necessidades individuais no centro de tudo.</li>
+                    <li><strong>Excelência na Qualidade de Serviços:</strong> Comprometemo-nos com altos padrões de qualidade.</li>
+                    <li><strong>Profissionalismo e Ética:</strong> Atuamos com competência, integridade e responsabilidade.</li>
+                    <li><strong>Transparência e Confiança:</strong> Garantimos clareza e honestidade nas nossas ações.</li>
+                </ul>
+            </div>
+    </section>
+
+
+
 
 
 
@@ -105,6 +279,11 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+    <script src="team-section.js"></script>
+    <script src="quem-somos-visao.js"></script>
     <script src="nav.js"></script>
     <script src="footer.js"></script>
 </body>

@@ -8,6 +8,7 @@ body, html {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  
 }
 
 /* Hero section styles */
@@ -28,6 +29,7 @@ body, html {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  margin-top: 155px;
 }
 
 .hero-overlay {

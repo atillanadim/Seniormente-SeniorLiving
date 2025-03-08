@@ -1,3 +1,9 @@
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
 .servicos-page {
     max-width: 1220px;
     margin: 0 auto;
@@ -8,12 +14,14 @@
     text-align: center;
     color: #125f6b;
     font-size: 2rem;
+    margin-top: 220px;
     margin-bottom: 20px;
 }
 
 .frase-container {
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 45px;
+    margin-bottom: 50px;
     font-style: italic;
     color: #666;
 }
@@ -182,9 +190,9 @@
 }
 
 .accordion-item {
-    border: 0 1px solid #bebebe;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    border: 0 2px solid #bebebe;
+    margin: 0 !important;
+    padding: 0 !important;
     overflow: hidden;
     background-color: #ffffff;
     transition: all 0.4s ease-in-out;
@@ -192,7 +200,7 @@
 
 .accordion-header {
     padding: 15px;
-    background-color: #688599;
+    background-color: #125f6b;
     color: white;
     cursor: pointer;
     font-size: 1.2rem;
@@ -205,7 +213,7 @@
 }
 
 .accordion-header:hover {
-    background-color: #2f546d;
+    background-color: #e67e22;
 }
 
 .accordion-header::after {
@@ -221,7 +229,8 @@
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    padding: 0 10px;
+    padding: 0 !important;
+    margin: 0 !important;
     background-color: white;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
@@ -229,6 +238,17 @@
 .accordion-item.active .accordion-content {
     max-height: 800px;
     padding: 15px;
+}
+
+.title-accordion-section{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 55px;
+    font-size: 24px;
+    color: #125f6b;
+    margin-bottom: 10px;
+    transition: font-size 0.3s ease;
+    
 }
 
 /* Responsivo */

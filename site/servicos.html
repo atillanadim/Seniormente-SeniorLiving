@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="servicos.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="carrousel-click.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <a href="index.html" class="logo-link">
-                <img class="logo" src="/logo.png" alt="SéniorMente Logo">
+                <img class="logo" id="logo" src="/logo.png" alt="SéniorMente Logo">
             </a>
             <button class="menu-toggle" aria-label="Abrir menu">
                 <span></span>
@@ -24,7 +25,16 @@
             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li class="dropdown">
+                        <a href="quem-somos.html">Quem Somos</a>
+                        <ul class="dropdown-content">
+                            <li><a href="quem-somos.html#como-nasceu">Como Nasceu</a></li>
+                            <li><a href="quem-somos.html#objetivo">Objetivo</a></li>
+                            <li><a href="quem-somos.html#equipa">Equipa</a></li>
+                            <li><a href="quem-somos.html#areas-atuacao">Áreas de Atuação</a></li>
+                            <li><a href="quem-somos.html#missao-visao-valores">Missão | Visão | Valores</a></li>
+                        </ul>
+                    </li>
                     <li><a href="servicos.html">Serviços</a></li>
                     <li><a href="eventos.html">Media & Eventos</a></li>
                     <li><a href="viver-melhor.html">Viver Melhor</a></li>
@@ -34,13 +44,15 @@
             </div>
         </nav>
     </header>
-
-    <main class="servicos-page">
-        <h1 class="servicos-prestados">Serviços</h1>
+    
+ <h1 class="servicos-prestados">Serviços</h1>
         <div class="frase-container">
             <i class="frases">“Devemos aprender durante toda a vida, sem imaginar que a sabedoria vem com a velhice.”</i>
             <p class="autor">Platão</p>
         </div>
+
+
+    <main class="servicos-page">
 
         <section class="servicos-grid">
             <div class="servico-item">
@@ -48,7 +60,7 @@
                 <div class="servico-content">
                     <h3>Consulta Gerontológica - Transformar Vidas, Elevar Esperanças</h3>
                     <p>
-                        A <strong>Consultoria Gerontológica</strong> oferece soluções abrangentes para <strong>cuidadores e idosos</strong>, sempre com foco na melhoria da qualidade de vida de todos os envolvidos.
+                        A <strong>Consultoria Gerontológica</strong> oferece soluções abrangentes para <strong>cuidadores e adultos mais velhos</strong>, sempre com foco na melhoria da qualidade de vida de todos os envolvidos.
                     </p>
         
                     <h4>Para o Cuidador – Atendimento, Orientação e Aconselhamento</h4>
@@ -117,8 +129,8 @@
                       
                         <h3>Serviços ao Domicílio para a Pessoa Idosa – Um Olhar Profundo e Sensível</h3>
                         <p>
-                            Os serviços ao domicílio para a pessoa idosa não são apenas uma conveniência, mas uma necessidade vital, trazendo dignidade, conforto e qualidade de vida.  
-                            Neste contexto, a <strong>avaliação global da pessoa idosa</strong> assume um papel crucial. Este processo vai muito além de um simples check-up; trata-se de uma análise abrangente que considera todas as dimensões da vida do idoso.
+                            Os serviços ao domicílio para adulto mais velha não são apenas uma conveniência, mas uma necessidade vital, trazendo dignidade, conforto e qualidade de vida.  
+                            Neste contexto, a <strong>avaliação global do adulto mais velho</strong> assume um papel crucial. Este processo vai muito além de um simples check-up; trata-se de uma análise abrangente que considera todas as dimensões da vida do idoso.
                         </p>
                 
                         <h4>Avaliação Global da Pessoa Idosa</h4>
@@ -210,13 +222,13 @@
                     </div>
                 </div>
         </section>
-
         <div class="accordion">
-            <h3>Transforme o Seu Mundo: Descubra os nossos Serviços Personalizados</h3>        
+            <h3 class="title-accordion-section">Transforme o seu mundo: <br> Descubra os nossos serviços personalizados
+            <span></span> </h3>        
             <div class="accordion-item">
                 <h4 class="accordion-header">Acompanhamento Profissional e Especializado</h4>
                 <div class="accordion-content">
-                    <p>O nosso serviço é uma resposta à solidão que muitos idosos enfrentam. Oferecemos suporte nas atividades diárias, companhia e a oportunidade de reatar vínculos sociais.</p>
+                    <p>O nosso serviço é uma resposta à solidão que muitos idosos enfrentam. Com profissionais capacitados, oferecemos suporte nas atividades diárias, companhia e a oportunidade de reatar vínculos sociais.</p>
                     <ul>
                         <li><strong>1.1 Acompanhamento a Consultas Externas/Exames:</strong> Imagine entrar em um consultório médico com a mente cheia de dúvidas e preocupações. Sente um turbilhão de emoções: ansiedade, medo e, muitas vezes, a incerteza sobre como chegar até o local. A logística torna -se num desafio e, muitas vezes, um obstáculo. É aqui que a nossa empresa entra em cena, transformando esta jornada de cuidados  numa experiência mais tranquila e humana. O acompanhamento a consultas externas e exames não é apenas um serviço; é uma rede de apoio.</li>
                         <li><strong>1.2 Acompanhamento no Combate à Solidão:</strong> Num mundo cada vez mais conectado, a solidão pode ser uma das experiências mais devastadoras. O acompanhamento no combate à solidão é uma luz no fim do túnel, oferecendo não apenas presença, mas uma conexão genuína. Profissionais treinados estabelecem um vínculo forte, promovendo diálogo, atividades e momentos de socialização que resgatam a alegria e a esperança. Este serviço é um lembrete poderoso de que ninguém precisa enfrentar os  seus desafios sozinho; juntos, podemos construir um caminho de apoio e renovação emocional.</li><br>
@@ -272,9 +284,94 @@
                 </div>
             </div>
         </div>
-        
-        
     </main>
+    <section class="card-section">
+        <h1 class="servicos-prestados">Capacitações</h1>
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Apoio Integral aos Cuidadores de Pessoas com Demência</h3>
+                            <p>Esta capacitação oferece uma abordagem holística, capacitando os cuidadores a entenderem
+                                melhor as complexidades da demência, proporcionando suporte emocional e prático que
+                                transforma não apenas a vida dos pacientes, mas também a dos próprios cuidadores.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                       
+                        <div class="card-content">
+                            <h3>Multissensorial para Cuidadores de Pessoas com Demência</h3>
+                            <p>Através de experiências sensoriais ricas, esta capacitação ensina técnicas inovadoras que
+                                ajudam os cuidadores a se conectarem de maneira mais profunda com os pacientes,
+                                estimulando memórias e emoções que muitas vezes permanecem adormecidas.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Cuidadores de Pessoas Mais Velhas Perante o Luto</h3>
+                            <p>Enfrentar a perda é uma realidade dolorosa, e esta capacitação oferece aos cuidadores as
+                                ferramentas necessárias para lidar com o luto, promovendo um espaço seguro para a
+                                expressão de emoções e o desenvolvimento de estratégias de enfrentamento.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Estimulação Multisensorial</h3>
+                            <p>Aprender a criar ambientes que estimulam os sentidos pode ser a chave para melhorar a
+                                qualidade de vida de idosos, especialmente aqueles que enfrentam limitações cognitivas. Esta
+                                capacitação ensina a aplicar técnicas de estimulação sensorial de forma eficaz e empática.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Para Equipas Técnica</h3>
+                            <p>O trabalho em equipe é fundamental em contextos de cuidados. Esta capacitação foca no
+                                fortalecimento da colaboração entre profissionais, promovendo uma abordagem integrada que
+                                beneficia tanto os cuidadores quanto os assistidos. </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Multissensorial para Idosos Snoezelen 24h</h3>
+                            <p>Conheça a abordagem Snoezelen, que utiliza estimulação sensorial em ambientes projetados
+                                para promover relaxamento e prazer. Esta capacitação capacita profissionais a implementarem
+                                essa prática transformadora em cuidados 24 horas.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Utilizando as Ferramentas de Arte Terapia/ Terapias activas e Expressivas</h3>
+                            <p>A arte como ferramenta de expressão e cura é poderosa. Esta capacitação ensina cuidadores a
+                                integrar a arte terapia em suas práticas, permitindo que os idosos se expressem de maneiras
+                                que palavras muitas vezes não conseguem capturar.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Através de workshops e ações de sensibilização</h3>
+                            <p>Podemos abordar diversos aspectos
+                                relacionados ao envelhecimento, tanto para profissionais da saúde quanto para o público em
+                                geral. É essencial que todos compreendam a importância de um envelhecimento saudável e
+                                digno, contribuindo para a construção de uma sociedade mais inclusiva e acolhedora.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Multissensorial para Idosos Snoezelen 24h</h3>
+                            <p>Conheça a abordagem Snoezelen, que utiliza estimulação sensorial em ambientes projetados
+                                para promover relaxamento e prazer. Esta capacitação capacita profissionais a implementarem
+                                essa prática transformadora em cuidados 24 horas.</p>
+                        </div>
+                    </div>
+                    <!-- Adicione mais cards aqui se necessário -->
+                </div>
+            </div>
+            <button class="carousel-button prev" aria-label="Anterior">&lt;</button>
+            <button class="carousel-button next" aria-label="Próximo">&gt;</button>
+        </div>
+    </section>
 
     <footer class="footer">
         
@@ -340,6 +437,7 @@
         </div>
     </footer>
     <script src="servicos.js"></script>
+    <script src="carrousel-click.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
     <script src="nav.js"></script>
     <script src="footer.js"></script>

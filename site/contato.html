@@ -11,9 +11,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <a href="index.html" class="logo-link">
-                <img class="logo" src="/logo.png" alt="SéniorMente Logo">
+                <img class="logo" id="logo" src="/logo.png" alt="SéniorMente Logo">
             </a>
             <button class="menu-toggle" aria-label="Abrir menu">
                 <span></span>
@@ -23,7 +23,16 @@
             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li class="dropdown">
+                        <a href="quem-somos.html">Quem Somos</a>
+                        <ul class="dropdown-content">
+                            <li><a href="quem-somos.html#como-nasceu">Como Nasceu</a></li>
+                            <li><a href="quem-somos.html#objetivo">Objetivo</a></li>
+                            <li><a href="quem-somos.html#equipa">Equipa</a></li>
+                            <li><a href="quem-somos.html#areas-atuacao">Áreas de Atuação</a></li>
+                            <li><a href="quem-somos.html#missao-visao-valores">Missão | Visão | Valores</a></li>
+                        </ul>
+                    </li>
                     <li><a href="servicos.html">Serviços</a></li>
                     <li><a href="eventos.html">Media & Eventos</a></li>
                     <li><a href="viver-melhor.html">Viver Melhor</a></li>
@@ -33,7 +42,6 @@
             </div>
         </nav>
     </header>
-
 
 
 
