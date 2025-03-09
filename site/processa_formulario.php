@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $necessidades = htmlspecialchars($_POST["necessidades"]);
 
     // E-mail para onde será enviado
-    $destino = "seu-email@seudominio.com"; // 🛑 ALTERE PARA SEU E-MAIL REAL
+    $destino = "geral@seniormente.com"; // 🛑 ALTERE PARA SEU E-MAIL REAL
     $assunto = "Novo Contato - Clínica de Gerontologia";
 
     // Corpo do e-mail
