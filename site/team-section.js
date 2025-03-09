@@ -1,237 +1,216 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Selecionar elementos
-    const membros = document.querySelectorAll('.equipe-membro');
-    const navItems = document.querySelectorAll('.equipe-nav li');
-    const equipeSection = document.querySelector('.equipe-section');
-    const equipeNav = document.querySelector('.equipe-nav');
+  // Selecionar elementos
+  const membros = document.querySelectorAll('.equipe-membro');
+  const navItems = document.querySelectorAll('.equipe-nav li');
+  const equipeSection = document.querySelector('.equipe-section');
+  const equipeNav = document.querySelector('.equipe-nav');
+  
+  // Variáveis de controle
+  let animacaoIniciada = false;
+  let activeIndex = 0;
+  
+  // Esconder todos os membros e o menu inicialmente
+  membros.forEach(membro => {
+    membro.style.opacity = '0';
+    membro.style.visibility = 'hidden';
+  });
+  
+  equipeNav.style.opacity = '0';
+  equipeNav.style.visibility = 'hidden';
+  
+  // Função para posicionar o menu
+  function posicionarMenu(index) {
+    const membro = membros[index];
+    if (!membro) return;
     
-    // Posicionar o menu inicialmente
-    posicionarMenu(0);
+    const membroRect = membro.getBoundingClientRect();
+    const sectionRect = equipeSection.getBoundingClientRect();
     
-    // Inicializar o primeiro membro como ativo
-    let activeIndex = 0;
-    showMembro(activeIndex);
+    const menuTop = membroRect.top - sectionRect.top + membroRect.height / 2 - equipeNav.offsetHeight / 2;
+    equipeNav.style.top = `${menuTop}px`;
+  }
+  
+  // Função para mostrar um membro específico
+  function showMembro(index, skipScroll = false) {
+    // Validar índice
+    if (index < 0 || index >= membros.length) return;
     
-    // Adicionar eventos de clique na navegação
-    navItems.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        showMembro(index);
-      });
-    });
+    // Atualizar índice ativo
+    activeIndex = index;
     
-    // Função para posicionar o menu relativo ao membro ativo
-    function posicionarMenu(index) {
-      const membro = membros[index];
-      if (!membro) return;
-      
-      const membroRect = membro.getBoundingClientRect();
-      const sectionRect = equipeSection.getBoundingClientRect();
-      
-      // Posicionar o menu no centro vertical do membro ativo
-      const menuTop = membroRect.top - sectionRect.top + membroRect.height / 2 - equipeNav.offsetHeight / 2;
-      equipeNav.style.top = `${menuTop}px`;
-    }
-    
-    // Função para mostrar um membro específico
-    function showMembro(index) {
-      // Atualizar índice ativo
-      activeIndex = index;
-      
-      // Atualizar navegação
-      navItems.forEach((item, i) => {
-        if (i === index) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
-      });
-      
-      // Esconder todos os membros
-      membros.forEach(membro => {
-        membro.classList.remove('active');
-        membro.querySelector('.info-membro').classList.remove('active');
-        membro.querySelector('.foto-wrapper').style.transform = 'rotate(0deg)';
-      });
-      
-      // Mostrar o membro ativo
-      const activeMembro = membros[index];
-      activeMembro.classList.add('active');
-      
-      // Animar a foto girando 360 graus
-      setTimeout(() => {
-        const fotoWrapper = activeMembro.querySelector('.foto-wrapper');
-        fotoWrapper.style.transform = 'rotate(360deg)';
-        
-        // Mostrar as informações quando a foto estiver no meio da animação
-        setTimeout(() => {
-          activeMembro.querySelector('.info-membro').classList.add('active');
-        }, 750); // Metade do tempo da animação da foto
-      }, 100);
-      
-      // Rolar para o membro ativo
-      activeMembro.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      
-      // Posicionar o menu após a rolagem
-      setTimeout(() => {
-        posicionarMenu(index);
-      }, 500);
-    }
-    
-    // Adicionar navegação com as teclas de seta
-    document.addEventListener('keydown', function(e) {
-      // Verificar se estamos na seção da equipe
-      const rect = equipeSection.getBoundingClientRect();
-      const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
-      
-      if (!isInView) return; // Não processar se não estiver na seção da equipe
-      
-      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-        // Próximo membro
-        if (activeIndex < membros.length - 1) {
-          showMembro(activeIndex + 1);
-          e.preventDefault(); // Prevenir scroll padrão apenas se não for o último membro
-        }
-      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-        // Membro anterior
-        if (activeIndex > 0) {
-          showMembro(activeIndex - 1);
-          e.preventDefault(); // Prevenir scroll padrão apenas se não for o primeiro membro
-        }
-      }
-    });
-    
-    // Variáveis para controlar o scroll
-    let isScrolling = false;
-    let lastScrollTime = 0;
-    
-    // Adicionar navegação com a roda do mouse
-    document.addEventListener('wheel', function(e) {
-      // Verificar se estamos na seção da equipe
-      const rect = equipeSection.getBoundingClientRect();
-      const isInView = rect.top <= window.innerHeight/2 && rect.bottom >= window.innerHeight/2;
-      
-      if (!isInView) return; // Não processar se não estiver na seção da equipe
-      
-      // Verificar se já passamos do último membro e estamos rolando para baixo
-      const isLastMemberActive = activeIndex === membros.length - 1;
-      const isScrollingDown = e.deltaY > 0;
-      
-      // Se estamos no último membro e rolando para baixo, permitir o scroll normal
-      if (isLastMemberActive && isScrollingDown) {
-        return;
-      }
-      
-      // Se estamos no primeiro membro e rolando para cima, permitir o scroll normal
-      const isFirstMemberActive = activeIndex === 0;
-      const isScrollingUp = e.deltaY < 0;
-      
-      if (isFirstMemberActive && isScrollingUp) {
-        return;
-      }
-      
-      // Evitar múltiplos eventos de roda em um curto período
-      const now = Date.now();
-      if (now - lastScrollTime < 500 || isScrolling) return;
-      
-      isScrolling = true;
-      lastScrollTime = now;
-      
-      if (isScrollingDown) {
-        // Rolar para baixo - próximo membro
-        if (activeIndex < membros.length - 1) {
-          e.preventDefault();
-          showMembro(activeIndex + 1);
-        }
+    // Atualizar navegação
+    navItems.forEach((item, i) => {
+      if (i === index) {
+        item.classList.add('active');
       } else {
-        // Rolar para cima - membro anterior
-        if (activeIndex > 0) {
-          e.preventDefault();
-          showMembro(activeIndex - 1);
-        }
+        item.classList.remove('active');
       }
-      
-      // Resetar flag após um tempo
-      setTimeout(() => {
-        isScrolling = false;
-      }, 500);
-    }, { passive: false });
+    });
     
-    // Adicionar navegação com o scroll da página
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = Array.from(membros).indexOf(entry.target);
-          if (index !== activeIndex) {
-            // Atualizar navegação sem animar novamente
-            activeIndex = index;
-            
-            navItems.forEach((item, i) => {
-              if (i === index) {
-                item.classList.add('active');
-              } else {
-                item.classList.remove('active');
-              }
-            });
-            
-            // Posicionar o menu
-            posicionarMenu(index);
-          }
-        }
-      });
-    }, { threshold: 0.5 });
-    
-    // Observar cada membro
+    // Esconder todos os membros
     membros.forEach(membro => {
-      observer.observe(membro);
-    });
-    
-    // Atualizar posição do menu durante o scroll
-    window.addEventListener('scroll', function() {
-      // Verificar se estamos na seção da equipe
-      const rect = equipeSection.getBoundingClientRect();
-      const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
+      membro.style.opacity = '0';
+      membro.style.visibility = 'hidden';
       
-      if (isInView) {
-        // Encontrar qual membro está mais visível
-        let maxVisibility = 0;
-        let mostVisibleIndex = activeIndex;
-        
-        membros.forEach((membro, index) => {
-          const membroRect = membro.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
-          
-          // Calcular quanto do elemento está visível (0 a 1)
-          const visibleTop = Math.max(0, membroRect.top);
-          const visibleBottom = Math.min(windowHeight, membroRect.bottom);
-          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-          const visibility = visibleHeight / membroRect.height;
-          
-          if (visibility > maxVisibility) {
-            maxVisibility = visibility;
-            mostVisibleIndex = index;
-          }
-        });
-        
-        // Atualizar posição do menu se necessário
-        if (mostVisibleIndex !== activeIndex) {
-          activeIndex = mostVisibleIndex;
-          
-          navItems.forEach((item, i) => {
-            if (i === activeIndex) {
-              item.classList.add('active');
-            } else {
-              item.classList.remove('active');
-            }
-          });
-        }
-        
-        // Posicionar o menu com base no scroll atual
-        posicionarMenu(activeIndex);
+      const infoMembro = membro.querySelector('.info-membro');
+      if (infoMembro) {
+        infoMembro.style.opacity = '0';
+        infoMembro.style.transform = 'translateX(30px)';
+      }
+      
+      const fotoWrapper = membro.querySelector('.foto-wrapper');
+      if (fotoWrapper) {
+        fotoWrapper.style.transform = 'rotate(0deg)';
       }
     });
     
-    // Atualizar posição do menu quando a janela for redimensionada
-    window.addEventListener('resize', function() {
-      posicionarMenu(activeIndex);
+    // Mostrar o membro ativo
+    const activeMembro = membros[index];
+    activeMembro.style.visibility = 'visible';
+    activeMembro.style.opacity = '1';
+    
+    // Animar a foto
+    setTimeout(() => {
+      const fotoWrapper = activeMembro.querySelector('.foto-wrapper');
+      if (fotoWrapper) {
+        fotoWrapper.style.transform = 'rotate(360deg)';
+      }
+      
+      // Mostrar as informações
+      setTimeout(() => {
+        const infoMembro = activeMembro.querySelector('.info-membro');
+        if (infoMembro) {
+          infoMembro.style.opacity = '1';
+          infoMembro.style.transform = 'translateX(0)';
+        }
+      }, 750);
+    }, 100);
+    
+    // Rolar para o membro ativo (se não for para pular)
+    if (!skipScroll) {
+      activeMembro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    // Posicionar o menu
+    posicionarMenu(index);
+    
+    // Mostrar o menu se estiver escondido
+    equipeNav.style.opacity = '1';
+    equipeNav.style.visibility = 'visible';
+  }
+  
+  // Função para iniciar a animação
+  function iniciarAnimacao() {
+    if (animacaoIniciada) return;
+    
+    animacaoIniciada = true;
+    
+    // Forçar o primeiro membro
+    showMembro(0, true);
+    
+    console.log('Animação iniciada com o membro 0');
+  }
+  
+  // Adicionar eventos de clique na navegação
+  navItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      if (!animacaoIniciada) {
+        iniciarAnimacao();
+      } else {
+        showMembro(index);
+      }
     });
   });
+  
+  // Observar quando a seção da equipe entra na viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animacaoIniciada) {
+        iniciarAnimacao();
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  observer.observe(equipeSection);
+  
+  // Controle de scroll
+  let isScrolling = false;
+  let lastScrollTime = 0;
+  
+  document.addEventListener('wheel', function(e) {
+    // Verificar se estamos na seção da equipe
+    const rect = equipeSection.getBoundingClientRect();
+    const isInView = rect.top <= window.innerHeight/2 && rect.bottom >= window.innerHeight/2;
+    
+    if (!isInView) return;
+    
+    // Iniciar animação se ainda não foi iniciada
+    if (!animacaoIniciada) {
+      iniciarAnimacao();
+      return;
+    }
+    
+    // Verificar limites
+    const isLastMember = activeIndex === membros.length - 1;
+    const isFirstMember = activeIndex === 0;
+    const isScrollingDown = e.deltaY > 0;
+    const isScrollingUp = e.deltaY < 0;
+    
+    // Permitir scroll normal nos limites
+    if ((isLastMember && isScrollingDown) || (isFirstMember && isScrollingUp)) {
+      return;
+    }
+    
+    // Evitar múltiplos eventos
+    const now = Date.now();
+    if (now - lastScrollTime < 500 || isScrolling) return;
+    
+    isScrolling = true;
+    lastScrollTime = now;
+    
+    if (isScrollingDown) {
+      if (activeIndex < membros.length - 1) {
+        e.preventDefault();
+        showMembro(activeIndex + 1);
+      }
+    } else {
+      if (activeIndex > 0) {
+        e.preventDefault();
+        showMembro(activeIndex - 1);
+      }
+    }
+    
+    setTimeout(() => {
+      isScrolling = false;
+    }, 500);
+  }, { passive: false });
+  
+  // Navegação com teclado
+  document.addEventListener('keydown', function(e) {
+    if (!animacaoIniciada) return;
+    
+    const rect = equipeSection.getBoundingClientRect();
+    const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
+    
+    if (!isInView) return;
+    
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      if (activeIndex < membros.length - 1) {
+        e.preventDefault();
+        showMembro(activeIndex + 1);
+      }
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      if (activeIndex > 0) {
+        e.preventDefault();
+        showMembro(activeIndex - 1);
+      }
+    }
+  });
+  
+  // Atualizar posição do menu no redimensionamento
+  window.addEventListener('resize', function() {
+    if (animacaoIniciada) {
+      posicionarMenu(activeIndex);
+    }
+  });
+});
