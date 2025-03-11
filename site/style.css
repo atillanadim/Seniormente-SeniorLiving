@@ -10,6 +10,9 @@ body, html {
   overflow-x: hidden;
   
 }
+.quem-somos h1 {
+  color:#125f6b;
+}
 
 /* Hero section styles */
 .hero {
@@ -57,6 +60,10 @@ body, html {
 
 .hero-content h1 span {
   color: #e67e22;
+}
+
+.servicos-prestados{
+  color:#125f6b;
 }
 
 /* Responsive adjustments */
@@ -205,6 +212,7 @@ body, html {
   margin: 30px auto;
   margin-top: 5px;
 }
+
 /*frase da aba servicos*/
 .frase-container {
   display: flex;

@@ -1,121 +1,233 @@
-.card-section {
-    padding: 40px;
-    padding-top: 1px;
-    background-color: #f5f0e8;
-}
-
-.card-section h1 {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.carousel-wrapper {
-    position: relative;
-    max-width: 400px;
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 60px;
-}
-
-.carousel-container {
+    padding: 2rem;
+  }
+  
+  /* Título */
+  .servicos-prestados-cap {
+    text-align: center;
+    color: #125f6b;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    margin-top: -3rem;
+  }
+  
+  /* Efeito da linha no título */
+  .card-content h3 {
+    position: relative;
+    display: inline-block;
+    color: #125f6b;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 5px;
+  }
+  
+  .card-content h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #125f6b;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  .card:hover .card-content h3::after {
+    width: 100%;
+  }
+  
+  /* Estilos do carrossel */
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: visible;
+  }
+  
+  .carousel-container {
     overflow: hidden;
-}
-
-.carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .carousel {
     display: flex;
-    transition: transform 0.5s ease;
-}
-
-.card {
-    flex: 0 0 100%;
-    background-color: #ffffff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.card-content {
-    padding: 20px;
+    transition: transform 0.5s ease-in-out;
+    width: max-content;
+  }
+  
+  /* Estilos dos cards */
+  .card {
+    flex: 0 0 auto;
+    width: 280px;
+    min-height: 150px;
+    padding: 1.5rem 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    text-align: center;
+    margin: 15px;
+  }
+  
+  .card-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
-}
-
-.card-content h3 {
-    font-size: 18px;
-    color: #125f6b;
-    margin-bottom: 10px;
-    transition: font-size 0.3s ease;
-}
-
-.card-content p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.card.expanded {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0,0,0,1);
-    
-}
-
-.card.expanded .card-content h3 {
-    font-size: 24px;
-}
-
-.card.expanded .card-content p {
-    opacity: 1;
-    max-height: 1000px;
-    margin-top: 10px;
-}
-
-.carousel-button {
+    gap: 1rem;
+  }
+  
+  .card-content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Botões de navegação (setas) - Agora estão FORA do carrossel */
+  .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #125f6b;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e67e22;
     color: white;
     border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
     z-index: 10;
-}
-
-.carousel-button:hover {
-    background-color: #e67e22;
-}
-
-.carousel-button.prev {
-    left: 0;
-}
-
-.carousel-button.next {
-    right: 0;
-}
-@media (max-width: 1024px) {
-    .card {
-        flex: 0 0 calc(50% - 20px);
+  }
+  
+  /* Setas posicionadas para fora */
+  .carousel-button.prev {
+    left: -60px; /* Move a seta esquerda para fora */
+  }
+  
+  .carousel-button.next {
+    right: -60px; /* Move a seta direita para fora */
+  }
+  
+  .carousel-button:hover {
+    background-color: #d35400;
+  }
+  
+  /* Indicadores do carrossel */
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .indicator.active {
+    background-color: #125f6b;
+    transform: scale(1.2);
+  }
+  
+  /* 🔹 Responsividade melhorada 🔹 */
+  
+  /* Ajustes para tablets */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
     }
-}
-
-@media (max-width: 768px) {
+  
     .card {
-        flex: 0 0 calc(100% - 20px);
+      padding: 1.5rem;
     }
-    
+  
+    .card-content h3 {
+      font-size: 1.25rem;
+    }
+  
     .carousel-wrapper {
-        padding: 0 40px;
+      padding: 0 50px;
     }
-}
+  
+    /* Ajuste das setas */
+    .carousel-button {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .carousel-button.prev {
+      left: -45px;
+    }
+  
+    .carousel-button.next {
+      right: -45px;
+    }
+  }
+  
+  /* Ajustes para smartphones pequenos */
+  @media (max-width: 480px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .servicos-prestados-cap {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+  
+    .card {
+      padding: 1.25rem;
+    }
+  
+    .carousel-wrapper {
+      padding: 0 40px;
+    }
+  
+    /* Ajuste das setas */
+    .carousel-button {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+    }
+  
+    .carousel-button.prev {
+      left: -35px;
+    }
+  
+    .carousel-button.next {
+      right: -35px;
+    }
+  }
+  

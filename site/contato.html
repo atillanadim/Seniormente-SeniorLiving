@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seniormente</title>
+    <title>Contatos - Seniormente</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contato-page.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
     <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
@@ -23,16 +23,7 @@
             <div class="nav-container">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="quem-somos.html">Quem Somos</a>
-                        <ul class="dropdown-content">
-                            <li><a href="quem-somos.html#como-nasceu">Como Nasceu</a></li>
-                            <li><a href="quem-somos.html#objetivo">Objetivo</a></li>
-                            <li><a href="quem-somos.html#equipa">Equipa</a></li>
-                            <li><a href="quem-somos.html#areas-atuacao">Áreas de Atuação</a></li>
-                            <li><a href="quem-somos.html#missao-visao-valores">Missão | Visão | Valores</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
                     <li><a href="servicos.html">Serviços</a></li>
                     <li><a href="eventos.html">Media & Eventos</a></li>
                     <li><a href="viver-melhor.html">Viver Melhor</a></li>
@@ -43,17 +34,47 @@
         </nav>
     </header>
 
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="map">
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.2548487715767!2d-8.627905524851847!3d41.150790071330945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd246505a14f11e5%3A0x7e66c7f54243e95b!2sRua%20de%20J%C3%BAlio%20Dinis%20210%2C%204050-371%20Porto!5e0!3m2!1spt-BR!2spt!4v1740681166835!5m2!1spt-BR!2spt" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>PHONE</h3>
+                            <p>010-020-0340</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>MOBILE</h3>
+                            <p>090-080-0760</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Olá, <span class="highlight">Como podemos lhe ajudar?</span></h3>
+                    <p>Caso precise de ajuda, entre em contacto connosco.</p>
+                    <p><strong>Email:</strong> <a href="mailto:geral@seniormente.com">geral@seniormente.com</a></p>
+                    <p><strong>Telefone:</strong> <a href="tel:+351914127380">+351 914 127 380</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+      <!-- Botão flutuante do WhatsApp com imagem PNG -->
+<a href="https://wa.me/351914127375?text=Olá,%20gostaria%20de%20mais%20informações" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+    <div class="whatsapp-float-button">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="Logo WhatsApp" class="whatsapp-logo">
+    </div>
+    <span class="whatsapp-tooltip">Fale conosco</span>
+  </a>
 
 
 
-
-
-
-<footer class="footer">
-        
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
-                
                 <div class="footer-contact">
                     <h3>Contactos</h3>
                     <p><i class="icon-email"></i> <a href="mailto:geral@seniormente.com">geral@seniormente.com</a></p>
@@ -66,7 +87,6 @@
                     <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
                 </div>
             </div>
-    
             <div class="footer-column">
                 <div class="footer-links">
                     <h3>Links Rápidos</h3>
@@ -80,7 +100,6 @@
                     </ul>
                 </div>
             </div>
-    
             <div class="footer-column">
                 <div class="footer-newsletter">
                     <h3>Assine nossa Newsletter</h3>
@@ -94,7 +113,6 @@
                     </form>
                 </div>
             </div>
-    
             <div class="footer-column">
                 <div class="footer-maps">
                     <h3>Nosso Local</h3>
@@ -104,7 +122,6 @@
                 </div>
             </div>
         </div>
-    
         <div class="footer-bottom">
             <p class="footer-rights">© 2025 SéniorMente. Todos os direitos reservados.</p>
             <button id="back-to-top" aria-label="Voltar ao topo">
@@ -112,7 +129,6 @@
             </button>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
     <script src="nav.js"></script>
     <script src="footer.js"></script>
 </body>

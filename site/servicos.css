@@ -5,12 +5,12 @@
 
 
 .servicos-page {
-    max-width: 1220px;
+    max-width: 1420px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-.servicos-prestados {
+.servicos-prestados  {
     text-align: center;
     color: #125f6b;
     font-size: 2rem;
@@ -37,6 +37,7 @@
     font-weight: bold;
 }
 
+
 .servicos-grid {
     display: grid;
     gap: 30px;
@@ -45,9 +46,9 @@
 .servico-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
-    background-color: #ffffff;
+    background-color: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -69,6 +70,7 @@
 
 .servico-content {
     padding: 20px;
+    margin: 25px;
 }
 
 .servico-content h3 {
@@ -116,8 +118,7 @@
 .servicos-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
-    
+    padding: 40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -153,7 +154,7 @@
 
 .tab-button.active {
     background-color: #4a6fa5;
-    color: white;
+    color: #f8f9fa;
 }
 
 .tab-content {
@@ -171,7 +172,7 @@
 }
 
 .capacitacao-item {
-    background-color: #f5f0e8;
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -191,10 +192,10 @@
 
 .accordion-item {
     border: 0 2px solid #bebebe;
-    margin: 0 !important;
+    margin: 5px !important;
     padding: 0 !important;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: white;
     transition: all 0.4s ease-in-out;
 }
 
@@ -233,6 +234,10 @@
     margin: 0 !important;
     background-color: white;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+.accordion-content p{
+    font-size: 17px;
+    margin-top: 10px;
 }
 
 .accordion-item.active .accordion-content {
