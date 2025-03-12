@@ -1,0 +1,149 @@
+/* Adicione estes estilos ao seu arquivo CSS existente */
+
+/* Estilo para esconder os tópicos inicialmente */
+.servico-content h4,
+.servico-content h4 + p,
+.servico-content h4 + ul,
+.servico-content h4 ~ p:not(:nth-of-type(1)),
+.servico-content h4 ~ ul {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para quando os tópicos estão visíveis */
+.servico-content.expanded h4,
+.servico-content.expanded h4 + p,
+.servico-content.expanded h4 + ul,
+.servico-content.expanded h4 ~ p:not(:nth-of-type(1)),
+.servico-content.expanded h4 ~ ul {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo para o botão Ver Mais */
+.ver-mais-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: #125f6b;
+  border: 1px solid #125f6b;
+  padding: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ver-mais-btn:hover {
+  background-color: #125f6b;
+  color: white;
+}
+
+.ver-mais-btn svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.ver-mais-btn.active svg {
+  transform: rotate(180deg);
+}
+
+/* Animação para a transição */
+.servico-content {
+  transition: max-height 0.5s ease;
+  overflow: hidden;
+}
+
+/* Espaçamento adicional para melhorar a legibilidade */
+.servico-content h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #125f6b;
+}
+
+/* Estilo para a lista de tópicos */
+.servico-content ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.servico-content ul li {
+  margin-bottom: 0.5rem;
+}
+/* Estilos para esconder os tópicos inicialmente */
+.servico-item .servico-content h4,
+.servico-item .servico-content h4 + p,
+.servico-item .servico-content h4 + ul,
+.servico-item .servico-content h4 ~ p:not(:nth-of-type(1)),
+.servico-item .servico-content h4 ~ ul {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo para quando os tópicos estão visíveis */
+.servico-item .servico-content.expanded h4,
+.servico-item .servico-content.expanded h4 + p,
+.servico-item .servico-content.expanded h4 + ul,
+.servico-item .servico-content.expanded h4 ~ p:not(:nth-of-type(1)),
+.servico-item .servico-content.expanded h4 ~ ul {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo para o botão Ver Mais */
+.expandir-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: #125f6b;
+  border: 1px solid #125f6b;
+  padding: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.expandir-btn:hover {
+  background-color: #125f6b;
+  color: white;
+}
+
+.expandir-btn svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.expandir-btn.active svg {
+  transform: rotate(180deg);
+}
+
+/* Animação para a transição */
+.servico-item .servico-content {
+  transition: max-height 0.5s ease;
+  overflow: hidden;
+}
+
+/* Espaçamento adicional para melhorar a legibilidade */
+.servico-item .servico-content h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #125f6b;
+}
+
+

@@ -1,0 +1,313 @@
+/* Estilos para a página Viver Melhor */
+.viver-melhor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+  
+  .viver-melhor-titulo {
+    color: #125f6b;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 200px;
+    position: relative;
+  }
+  
+  .viver-melhor-subtitulo {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+  }
+  
+  .viver-melhor-intro {
+    background-color: #f8f4f0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .viver-melhor-intro h2 {
+    color: #125f6b;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .viver-melhor-intro p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  
+  /* Grid de almanaques */
+  .almanaque-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .almanaque-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .almanaque-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .almanaque-capa {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+  
+  .almanaque-capa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .almanaque-card:hover .almanaque-capa img {
+    transform: scale(1.05);
+  }
+  
+  .almanaque-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #999;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: #f8f8f8;
+  }
+  
+  .almanaque-placeholder svg {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    color: #125f6b;
+  }
+  
+  .almanaque-conteudo {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .almanaque-titulo {
+    color: #125f6b;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  
+  .almanaque-descricao {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .almanaque-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #777;
+    font-size: 0.9rem;
+  }
+  
+  .almanaque-info svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+  }
+  
+  .almanaque-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #125f6b;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .almanaque-download:hover {
+    background-color: #0d4954;
+    transform: translateY(-3px);
+  }
+  
+  .almanaque-download svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+  
+  /* Seção de inscrição */
+  .inscricao-section {
+    margin-top: 4rem;
+    background-color: #125f6b;
+    border-radius: 12px;
+    padding: 2.5rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .inscricao-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .inscricao-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .inscricao-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .inscricao-input {
+    flex-grow: 1;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 1rem;
+  }
+  
+  .inscricao-button {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 8px 8px 0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .inscricao-button:hover {
+    background-color: #d35400;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .viver-melhor-titulo {
+      font-size: 2rem;
+    }
+  
+    .viver-melhor-subtitulo {
+      font-size: 1.1rem;
+    }
+  
+    .viver-melhor-intro {
+      padding: 1.5rem;
+    }
+  
+    .viver-melhor-intro h2 {
+      font-size: 1.5rem;
+    }
+  
+    .almanaque-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+  
+    .almanaque-capa {
+      height: 250px;
+    }
+  
+    .inscricao-section {
+      padding: 2rem;
+    }
+  
+    .inscricao-form {
+      flex-direction: column;
+    }
+  
+    .inscricao-input {
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+  
+    .inscricao-button {
+      border-radius: 8px;
+      padding: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .viver-melhor-container {
+      padding: 2rem 1rem;
+    }
+  
+    .viver-melhor-titulo {
+      font-size: 1.8rem;
+    }
+  
+    .almanaque-card {
+      max-width: 100%;
+    }
+  
+    .almanaque-capa {
+      height: 200px;
+    }
+  
+    .almanaque-titulo {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Adicione estes estilos ao seu CSS */
+.mensagem-sucesso, .mensagem-erro {
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.mensagem-sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensagem-erro {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
