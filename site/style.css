@@ -19,7 +19,7 @@ body, html {
   position: relative;
   width: 100vw;
   height: 80vh;
-  background: url('/banner-inicial.png') no-repeat center center;
+  background: url('src/banner-inicial.png') no-repeat center center;
   background-size: cover;
   margin: 0;
   padding: 0;
