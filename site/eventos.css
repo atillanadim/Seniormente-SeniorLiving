@@ -203,37 +203,86 @@
     margin-bottom: 1rem;
   }
   
-  /* Responsividade */
-  @media (min-width: 768px) {
+  /* Enhanced responsiveness for the events page */
+
+/* Existing styles remain unchanged */
+
+/* Improved responsiveness for medium to large screens */
+@media (min-width: 992px) {
+    .eventos-grid {
+      grid-template-columns: repeat(3, 1fr); /* Show 3 columns on larger screens */
+      gap: 2.5rem;
+    }
+  }
+  
+  /* Improved tablet responsiveness */
+  @media (min-width: 768px) and (max-width: 991px) {
     .eventos-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
+  
+    .evento-galeria {
+      height: 350px; /* Slightly reduced height */
+    }
+  
+    .eventos-titulo {
+      margin-top: 140px; /* Adjusted for tablet */
+    }
   }
   
+  /* Enhanced mobile responsiveness */
   @media (max-width: 767px) {
     .eventos-titulo {
       font-size: 2rem;
+      margin-top: 120px; /* Reduced top margin on mobile */
+      margin-bottom: 2.5rem;
+    }
+  
+    .eventos-titulo::after {
+      width: 60px;
+      height: 3px;
+      bottom: -12px;
     }
   
     .evento-titulo {
       font-size: 1.3rem;
+      margin-bottom: 1.2rem;
     }
   
     .evento-conteudo {
       padding: 1.5rem;
     }
   
+    .evento-descricao {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+  
     .evento-galeria {
       height: 300px;
     }
   
+    /* Improved gallery navigation for touch */
     .galeria-btn {
-      width: 35px;
-      height: 35px;
+      width: 36px;
+      height: 36px;
+      opacity: 0.9; /* More visible on mobile */
+    }
+  
+    .galeria-dot {
+      width: 10px;
+      height: 10px;
+    }
+  
+    /* Better touch targets */
+    .galeria-nav {
+      gap: 12px; /* Increased gap for better touch targets */
     }
   }
   
+  /* Small mobile devices */
   @media (max-width: 480px) {
     .eventos-container {
       padding: 2rem 1rem;
@@ -242,16 +291,141 @@
     .eventos-titulo {
       font-size: 1.8rem;
       margin-bottom: 2rem;
+      margin-top: 100px; /* Further reduced for small screens */
     }
   
     .evento-galeria {
-      height: 250px;
+      height: 220px; /* Smaller gallery height */
     }
   
     .galeria-btn {
-      width: 30px;
-      height: 30px;
-      font-size: 1rem;
+      width: 32px;
+      height: 32px;
+      font-size: 0.9rem;
+    }
+  
+    .evento-conteudo {
+      padding: 1.25rem; /* Reduced padding */
+    }
+  
+    .evento-titulo {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  
+    .evento-titulo::after {
+      width: 40px;
+      height: 2px;
+      bottom: -8px;
+    }
+  
+    .evento-descricao {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+  
+    .evento-data {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+  
+    /* Improved card hover effect for mobile */
+    .evento-card:hover {
+      transform: translateY(-5px); /* Reduced hover effect */
+    }
+  }
+  
+  /* Very small devices */
+  @media (max-width: 360px) {
+    .eventos-titulo {
+      font-size: 1.6rem;
+      margin-top: 90px;
+    }
+  
+    .evento-galeria {
+      height: 180px;
+    }
+  
+    .galeria-btn {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+  
+    .galeria-btn.prev {
+      left: 10px;
+    }
+  
+    .galeria-btn.next {
+      right: 10px;
+    }
+  
+    .galeria-nav {
+      bottom: 15px;
+    }
+  
+    .galeria-dot {
+      width: 8px;
+      height: 8px;
+    }
+  
+    .evento-conteudo {
+      padding: 1rem;
+    }
+  
+    .evento-titulo {
+      font-size: 1.1rem;
+    }
+  
+    .evento-descricao {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Improved touch experience */
+  @media (hover: none) {
+    /* Always show navigation on touch devices */
+    .galeria-btn {
+      opacity: 0.8;
+    }
+  
+    /* Disable hover effects that might cause issues on touch */
+    .evento-card:hover {
+      transform: none;
+    }
+  
+    .evento-card:active {
+      transform: translateY(-5px);
+      transition: transform 0.1s ease;
+    }
+  
+    /* Make gallery dots easier to tap */
+    .galeria-nav {
+      gap: 15px;
+    }
+  
+    .galeria-dot {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  
+  /* Fix for potential layout issues with gallery images */
+  .galeria-slide img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Ensure proper aspect ratio for gallery images */
+  @supports (aspect-ratio: 16 / 9) {
+    .evento-galeria {
+      aspect-ratio: 16 / 9;
+      height: auto;
     }
   }
   

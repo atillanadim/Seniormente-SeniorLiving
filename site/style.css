@@ -66,20 +66,7 @@ body, html {
   color:#125f6b;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero {
-      height: 60vh;
-  }
 
-  .hero-content {
-      padding: 20px;
-  }
-
-  .hero-content h1 {
-      font-size: 2rem;
-  }
-}
 
 
 
@@ -173,18 +160,6 @@ body, html {
   }
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .whatsapp-float {
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  .whatsapp-float-button {
-    width: 50px;
-    height: 50px;
-  }
-}
 
 
 
@@ -272,30 +247,78 @@ body, html {
 
 
 
-
-  
-
-
-
-
-
-
-
-
-
-
   /* Estilo responsivo para telas menores */
   @media (max-width: 768px) {
     .content {
       flex-direction: column;
       text-align: center;
     }
-  
-    img {
-      margin-top: 20px;
-      width: 80%;
-    }
-  }
-footer{
+  footer{
     text-align: center;
+} }
+/* Improved mobile responsiveness */
+@media (max-width: 768px) {
+  /* Hero section improvements */
+  .hero {
+    height: 50vh; /* Slightly shorter on mobile */
+    margin-top: 100px; /* Reduced top margin on mobile */
+  }
+
+  .hero-content {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Quem somos section improvements */
+  .quem-somos {
+    padding: 15px;
+    margin: 30px auto;
+  }
+
+  /* Services section improvements */
+  .servicos-prestados {
+    font-size: 22px;
+    padding: 0 15px;
+  }
+
+  /* Frases container improvements */
+  .frases {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  /* Button improvements */
+  .saiba-mais {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh;
+    margin-top: 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .servicos-prestados {
+    font-size: 20px;
+  }
+
+  .img {
+    max-width: 100%;
+  }
+
+  .whatsapp-float-button {
+    width: 45px;
+    height: 45px;
+  }
 }
