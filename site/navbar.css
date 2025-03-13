@@ -150,7 +150,7 @@
 /* Improved responsiveness for medium screens */
 @media (max-width: 1024px) {
     .navbar {
-      padding: 30px 20px; /* Reduced padding from original 50px */
+      padding: 20px 10px; /* Reduced padding from original 50px */
     }
   
     .logo {
