@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Lista de Emails - Seniormente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #125f6b;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        
+        .download-btn {
+            background-color: #125f6b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+        
+        .download-btn:hover {
+            background-color: #0d4b55;
+        }
+        
+        .download-btn:disabled {
+            background-color: #7fb0b8;
+            cursor: not-allowed;
+        }
+        
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+        
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="src/logo.png" alt="Seniormente" class="logo">
+        <h1>Download Lista de Emails</h1>
+        <p>Clique no botão abaixo para baixar um arquivo Excel contendo todos os emails cadastrados na newsletter.</p>
+        
+        <button id="downloadBtn" class="download-btn">
+            <span id="btnText">Baixar Lista de Emails</span>
+            <svg class="icon" id="downloadIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <div class="spinner" id="spinner"></div>
+        </button>
+        
+        <div id="message" class="message"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.getElementById('downloadBtn');
+            const btnText = document.getElementById('btnText');
+            const downloadIcon = document.getElementById('downloadIcon');
+            const spinner = document.getElementById('spinner');
+            const message = document.getElementById('message');
+            
+            downloadBtn.addEventListener('click', function() {
+                // Mostrar estado de carregamento
+                downloadBtn.disabled = true;
+                btnText.textContent = 'Gerando arquivo...';
+                downloadIcon.style.display = 'none';
+                spinner.style.display = 'block';
+                message.style.display = 'none';
+                
+                // Fazer a requisição para o script PHP
+                fetch('gerar-excel.php')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao gerar o arquivo');
+                        }
+                        return response.blob();
+                    })
+                    .then(blob => {
+                        // Criar URL para o blob
+                        const url = window.URL.createObjectURL(blob);
+                        
+                        // Criar elemento de link para download
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+                        a.download = 'lista-emails-seniormente.csv';
+                        
+                        // Adicionar ao documento e clicar
+                        document.body.appendChild(a);
+                        a.click();
+                        
+                        // Limpar
+                        window.URL.revokeObjectURL(url);
+                        document.body.removeChild(a);
+                        
+                        // Mostrar mensagem de sucesso
+                        message.textContent = 'Arquivo gerado com sucesso!';
+                        message.className = 'message success';
+                        message.style.display = 'block';
+                        
+                        // Restaurar botão
+                        downloadBtn.disabled = false;
+                        btnText.textContent = 'Baixar Lista de Emails';
+                        downloadIcon.style.display = 'block';
+                        spinner.style.display = 'none';
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        
+                        // Mostrar mensagem de erro
+                        message.textContent = 'Ocorreu um erro ao gerar o arquivo. Por favor, tente novamente.';
+                        message.className = 'message error';
+                        message.style.display = 'block';
+                        
+                        // Restaurar botão
+                        downloadBtn.disabled = false;
+                        btnText.textContent = 'Baixar Lista de Emails';
+                        downloadIcon.style.display = 'block';
+                        spinner.style.display = 'none';
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

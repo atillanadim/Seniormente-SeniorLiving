@@ -67,7 +67,35 @@ body, html {
 }
 
 
+/* Estilos específicos para o checkbox de termos e condições */
+.terms-checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
 
+.terms-checkbox {
+  margin-right: 10px;
+}
+
+.terms-checkbox-container span {
+  font-size: 14px;
+  color: #333;
+}
+
+.terms-checkbox-container a {
+  color: #125f6b !important;
+  text-decoration: none !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: inherit !important;
+  cursor: pointer !important;
+}
+
+.terms-checkbox-container a:hover {
+  text-decoration: underline !important;
+}
 
 
 /*whatsapp*/

@@ -28,8 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             })
-            .then(response => response.text())
+            .then(response => {
+                console.log(response)
+                return response.text()
+            })
             .then(data => {
+                console.log(data)
                 let responseData;
                 
                 // Tenta interpretar como JSON
