@@ -6,7 +6,7 @@ $headers .= "Reply-To: $admin_email" . "\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
 // Configurações
-$host = "ispconfig.virkantzia.com"; // Servidor do banco de dados
+$host = "host2.virkantzia.com"; // Servidor do banco de dados
 $username = "c12seniorm"; // Usuário do banco de dados
 $password = "nxxGR4_sL3G"; // Senha do banco de dados
 $dbname = "c12emails"; // Nome do banco de dados
