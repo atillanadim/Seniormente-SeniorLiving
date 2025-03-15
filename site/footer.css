@@ -294,7 +294,7 @@
 
 
 /* Estilos para o botão da newsletter */
-.form-group a.newsletter-button {
+.form-group a .newsletter-button {
     display: inline-block !important;
     background-color: #125f6b !important;
     color: white !important;
@@ -308,7 +308,7 @@
     font-size: 0.9rem !important;
 }
 
-.form-group a.newsletter-button:hover {
+.form-group a .newsletter-button:hover {
     background-color: #e67e22 !important;
 }
 

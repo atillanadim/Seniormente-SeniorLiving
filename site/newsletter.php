@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $message .= "</ul>";
                 $message .= "<p>Se desejar cancelar a assinatura, clique no link abaixo:</p>";
                 $message .= "<p><a href='$cancel_link'>Cancelar inscrição</a></p>";
-                $message .= "<p>Atenciosamente,<br>Equipe $site_name</p>";
+                $message .= "<p>Os melhores cumprimentos,<br>Equipa $site_name</p>";
                 $message .= "</body></html>";
                 
                 // Cabeçalhos para envio de email HTML
