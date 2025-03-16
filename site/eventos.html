@@ -162,65 +162,65 @@
                     <p class="evento-descricao">O Município do Porto é membro da Rede Mundial de Cidades Amigas das pessoas Idosas desde 2010. Através do Departamento Municipal de Coesão Social, a Câmara Municipal do Porto encara como prioritária a promoção de um envelhecimento ativo e saudável.</p>
                 </div>
             </article>
+
+
+
+                    <!-- Correção para a terceira galeria (evento 3) -->
             <article class="evento-card">
                 <div class="evento-galeria">
-                    <div class="galeria-container" id="galeria2">
+                    <div class="galeria-container" id="galeria3">
                         <!-- Placeholders para as imagens -->
                         <div class="galeria-slide">
-                            <div class="galeria-placeholder"><img src="src/Encontro Nacional de Cuidadores Informai.jpg" alt="Workshop V.N. Gaia - Imagem 1"></div>
-                            <!--  -->
+                            <div class="galeria-placeholder"><img src="src/Encontro Nacional de Cuidadores Informai.jpg" alt="Encontro Nacional de Cuidadores - Imagem 1"></div>
                         </div>
-                        <div class="galeria-slide">
-                            <div class="galeria-placeholder"><img src="src/evento 1.1.png" alt="Workshop V.N. Gaia - Imagem 2"></div>
-                            <!--  -->
-                        </div>
-                      
+                       <!--<div class="galeria-slide">
+                            <div class="galeria-placeholder"><img src="src/evento 1.1.png" alt="Encontro Nacional de Cuidadores - Imagem 2"></div>
+                        </div>--> 
                     </div>
                     
                     <!-- Botões de navegação -->
-                    <button class="galeria-btn prev" data-galeria="galeria2">&lt;</button>
-                    <button class="galeria-btn next" data-galeria="galeria2">&gt;</button>
+                    <button class="galeria-btn prev" data-galeria="galeria3">&lt;</button>
+                    <button class="galeria-btn next" data-galeria="galeria3">&gt;</button>
                     
                     <!-- Indicadores -->
-                    <div class="galeria-nav" id="nav2"></div>
+                    <div class="galeria-nav" id="nav3"></div>
                 </div>
                 
                 <div class="evento-conteudo">
                     <span class="evento-data">2024</span>
-                    <h2 class="evento-titulo">6.º Encontro Nacional de Cuidadores Informais </h2>
-                    <p class="evento-descricao">A SéniorMente esteve presente no VI Encontro Nacional de Cuidadores Informais, realizado em Grijo- Vila Nova de Gaia com participação d Câmara Municipal de Vila Nova de Gaia.</p>
+                    <h2 class="evento-titulo">6.º Encontro Nacional de Cuidadores Informais</h2>
+                    <p class="evento-descricao">A SéniorMente esteve presente no VI Encontro Nacional de Cuidadores Informais, realizado em Grijo- Vila Nova de Gaia com participação d Câmara Municipal de Vila Nova de Gaia.</p>
                 </div>
             </article>
+
+            <!-- Correção para a quarta galeria (evento 4) -->
             <article class="evento-card">
                 <div class="evento-galeria">
-                    <div class="galeria-container" id="galeria2">
+                    <div class="galeria-container" id="galeria4">
                         <!-- Placeholders para as imagens -->
                         <div class="galeria-slide">
-                            <div class="galeria-placeholder"><img src="src/eventos porto cidade 2.jpg" alt="Workshop V.N. Gaia - Imagem 1"></div>
-                            <!--  -->
+                            <div class="galeria-placeholder"><img src="src/eventos porto cidade 2.jpg" alt="Plano de Ação Porto - Imagem 1"></div>
                         </div>
                         <div class="galeria-slide">
-                            <div class="galeria-placeholder"><img src="src/evento.jpg" alt="Workshop V.N. Gaia - Imagem 2"></div>
-                            <!--  -->
+                            <div class="galeria-placeholder"><img src="src/evento.jpg" alt="Plano de Ação Porto - Imagem 2"></div>
                         </div>
-                      
                     </div>
                     
                     <!-- Botões de navegação -->
-                    <button class="galeria-btn prev" data-galeria="galeria2">&lt;</button>
-                    <button class="galeria-btn next" data-galeria="galeria2">&gt;</button>
+                    <button class="galeria-btn prev" data-galeria="galeria4">&lt;</button>
+                    <button class="galeria-btn next" data-galeria="galeria4">&gt;</button>
                     
                     <!-- Indicadores -->
-                    <div class="galeria-nav" id="nav2"></div>
+                    <div class="galeria-nav" id="nav4"></div>
                 </div>
                 
                 <div class="evento-conteudo">
                     <span class="evento-data">2024</span>
-                    <h2 class="evento-titulo">Colaboração do ICAD no Plano de Ação Porto Cidade Amiga das Pessoas Idosas </h2>
-                    <p class="evento-descricao">A SéniorMente este presente na 2°sessão organizada pelo Pelouro da Coesão Social da Câmara Municipal do Porto inserido no "Plano de Acção Porto Cidade Amiga das Pessoas Idosas ".
-                        Esta acção decorreu no dia 9 de Dezembro de 2024, no Auditório da Beneficência Familiar.</p>
+                    <h2 class="evento-titulo">Colaboração do ICAD no Plano de Ação Porto Cidade Amiga das Pessoas Idosas</h2>
+                    <p class="evento-descricao">A SéniorMente este presente na 2°sessão organizada pelo Pelouro da Coesão Social da Câmara Municipal do Porto inserido no "Plano de Acção Porto Cidade Amiga das Pessoas Idosas ". Esta acção decorreu no dia 9 de Dezembro de 2024, no Auditório da Beneficência Familiar.</p>
                 </div>
             </article>
+
            
         </div>
     </main>
@@ -317,60 +317,72 @@
         </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar todas as galerias
-            initGalerias();
-            
-            function initGalerias() {
-                // Configurar galeria 1
-                setupGaleria('galeria1', 'nav1');
-                
-                // Configurar galeria 2
-                setupGaleria('galeria2', 'nav2');
-            }
-            
-            function setupGaleria(galeriaId, navId) {
-                const galeria = document.getElementById(galeriaId);
-                const slides = galeria.querySelectorAll('.galeria-slide');
-                const navContainer = document.getElementById(navId);
-                const prevBtn = document.querySelector(`.galeria-btn.prev[data-galeria="${galeriaId}"]`);
-                const nextBtn = document.querySelector(`.galeria-btn.next[data-galeria="${galeriaId}"]`);
-                
-                let currentSlide = 0;
-                
-                // Criar indicadores
-                slides.forEach((_, index) => {
-                    const dot = document.createElement('div');
-                    dot.classList.add('galeria-dot');
-                    if (index === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => goToSlide(index));
-                    navContainer.appendChild(dot);
-                });
-                
-                // Função para ir para um slide específico
-                function goToSlide(index) {
-                    currentSlide = index;
-                    galeria.style.transform = `translateX(-${currentSlide * 100}%)`;
-                    
-                    // Atualizar indicadores
-                    const dots = navContainer.querySelectorAll('.galeria-dot');
-                    dots.forEach((dot, i) => {
-                        dot.classList.toggle('active', i === currentSlide);
-                    });
-                }
-                
-                // Eventos dos botões
-                prevBtn.addEventListener('click', () => {
-                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                    goToSlide(currentSlide);
-                });
-                
-                nextBtn.addEventListener('click', () => {
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    goToSlide(currentSlide);
-                });
-            }
-        });
+    document.addEventListener("DOMContentLoaded", () => {
+        // Inicializar todas as galerias
+        initGalerias()
+      
+        function initGalerias() {
+          // Configurar cada galeria individualmente com IDs únicos
+          setupGaleria("galeria1", "nav1")
+          setupGaleria("galeria2", "nav2")
+          setupGaleria("galeria3", "nav3") // Adicionado para a terceira galeria
+          setupGaleria("galeria4", "nav4") // Adicionado para a quarta galeria
+        }
+      
+        function setupGaleria(galeriaId, navId) {
+          const galeria = document.getElementById(galeriaId)
+          if (!galeria) {
+            console.warn(`Galeria com ID ${galeriaId} não encontrada`)
+            return
+          }
+      
+          const slides = galeria.querySelectorAll(".galeria-slide")
+          const navContainer = document.getElementById(navId)
+          const prevBtn = document.querySelector(`.galeria-btn.prev[data-galeria="${galeriaId}"]`)
+          const nextBtn = document.querySelector(`.galeria-btn.next[data-galeria="${galeriaId}"]`)
+      
+          if (!navContainer || !prevBtn || !nextBtn) {
+            console.warn(`Elementos de navegação para galeria ${galeriaId} não encontrados`)
+            return
+          }
+      
+          let currentSlide = 0
+      
+          // Criar indicadores
+          slides.forEach((_, index) => {
+            const dot = document.createElement("div")
+            dot.classList.add("galeria-dot")
+            if (index === 0) dot.classList.add("active")
+            dot.addEventListener("click", () => goToSlide(index))
+            navContainer.appendChild(dot)
+          })
+      
+          // Função para ir para um slide específico
+          function goToSlide(index) {
+            currentSlide = index
+            galeria.style.transform = `translateX(-${currentSlide * 100}%)`
+      
+            // Atualizar indicadores
+            const dots = navContainer.querySelectorAll(".galeria-dot")
+            dots.forEach((dot, i) => {
+              dot.classList.toggle("active", i === currentSlide)
+            })
+          }
+      
+          // Eventos dos botões
+          prevBtn.addEventListener("click", () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length
+            goToSlide(currentSlide)
+          })
+      
+          nextBtn.addEventListener("click", () => {
+            currentSlide = (currentSlide + 1) % slides.length
+            goToSlide(currentSlide)
+          })
+        }
+      });
+      
+       
     </script>
     <script src="newsletterjs.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
