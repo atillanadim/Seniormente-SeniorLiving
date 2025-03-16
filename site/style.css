@@ -16,6 +16,7 @@ body, html {
 
 /* Hero section styles */
 /* Estilos atualizados para a seção hero */
+/* Estilos atualizados para a seção hero */
 .hero {
   position: relative;
   width: 100vw;
@@ -33,6 +34,7 @@ body, html {
   margin-left: -50vw;
   margin-right: -50vw;
   margin-top: 155px;
+  overflow: hidden; /* Adicionado para evitar que as palavras saiam da tela */
 }
 
 .hero-overlay {
@@ -50,6 +52,7 @@ body, html {
   text-align: center;
   width: 100%;
   padding: 0 20px;
+  height: 100%; /* Adicionado para permitir posicionamento relativo */
 }
 
 .values-container {
@@ -58,33 +61,87 @@ body, html {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  position: relative; /* Adicionado para permitir posicionamento absoluto dos filhos */
+  height: 100%; /* Ocupa toda a altura do hero-content */
+  width: 100%; /* Ocupa toda a largura disponível */
 }
 
 .value-word {
-  font-family: "Satisfy", cursive; /* Fonte cursiva similar à da imagem */
+  font-family: "Satisfy", cursive;
   font-size: 5rem;
   line-height: 1.2;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  transform: rotate(-5deg); /* Leve rotação para dar o efeito da imagem */
-  color:#e67e22;; /* Cor marrom-avermelhada similar à da imagem */
+  color: #b25d4a;
+  position: absolute; /* Posicionamento absoluto para maior controle */
 }
 
 .cuidar {
-  transform: rotate(-5deg)  translateY(-67px) translateX(-600px);
+  transform: rotate(-5deg) translateY(-30vh) translateX(-40vw);
+  left: 50%;
+  top: 50%;
 }
 
 .humanizar {
   font-size: 5.5rem;
-  transform: rotate(-4deg) translateX(-87px) translateY(45px);
-
+  transform: rotate(-4deg) translateX(-5vw) translateY(0);
+  left: 50%;
+  top: 50%;
 }
 
 .respeitar {
-  transform: rotate(-5deg) translateX(600px) translateY(100px);
+  transform: rotate(-5deg) translateX(40vw) translateY(30vh);
+  left: 40%;
+  top: 50%;
 }
 
-/* Responsividade */
+/* Telas grandes */
+@media (min-width: 1600px) {
+  .cuidar {
+    transform: rotate(-5deg) translateY(-25vh) translateX(-35vw);
+  }
+
+  .respeitar {
+    transform: rotate(-5deg) translateX(35vw) translateY(25vh);
+  }
+}
+
+/* Telas médias-grandes */
+@media (max-width: 1200px) {
+  .cuidar {
+    transform: rotate(-5deg) translateY(-25vh) translateX(-30vw);
+  }
+
+  .humanizar {
+    transform: rotate(-4deg) translateX(-5vw) translateY(0);
+  }
+
+  .respeitar {
+    transform: rotate(-5deg) translateX(30vw) translateY(25vh);
+  }
+}
+
+/* Telas médias */
+@media (max-width: 992px) {
+  .value-word {
+    font-size: 4.5rem;
+  }
+
+  .humanizar {
+    font-size: 5rem;
+  }
+
+  .cuidar {
+    transform: rotate(-5deg) translateY(-20vh) translateX(-25vw);
+    
+  }
+
+  .respeitar {
+    transform: rotate(-5deg) translateX(25vw) translateY(20vh);
+  }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
   .hero {
     height: 60vh;
@@ -99,14 +156,34 @@ body, html {
   }
 
   .cuidar {
-    transform: rotate(-8deg) translateX(-20px);
+    transform: rotate(-5deg) translateY(-15vh) translateX(-20vw);
   }
 
   .respeitar {
-    transform: rotate(-3deg) translateX(20px);
+    transform: rotate(-5deg) translateX(20vw) translateY(15vh);
   }
 }
 
+/* Telas pequenas */
+@media (max-width: 576px) {
+  .value-word {
+    font-size: 3rem;
+  }
+
+  .humanizar {
+    font-size: 3.5rem;
+  }
+
+  .cuidar {
+    transform: rotate(-5deg) translateY(-10vh) translateX(-15vw);
+  }
+
+  .respeitar {
+    transform: rotate(-5deg) translateX(15vw) translateY(10vh);
+  }
+}
+
+/* Dispositivos móveis */
 @media (max-width: 480px) {
   .value-word {
     font-size: 2.8rem;
@@ -117,11 +194,30 @@ body, html {
   }
 
   .cuidar {
-    transform: rotate(-5deg) translateX(-10px);
+    transform: rotate(-5deg) translateY(-8vh) translateX(-10vw);
   }
 
   .respeitar {
-    transform: rotate(-2deg) translateX(10px);
+    transform: rotate(-5deg) translateX(10vw) translateY(8vh);
+  }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 360px) {
+  .value-word {
+    font-size: 2.5rem;
+  }
+
+  .humanizar {
+    font-size: 2.8rem;
+  }
+
+  .cuidar {
+    transform: rotate(-5deg) translateY(-6vh) translateX(-8vw);
+  }
+
+  .respeitar {
+    transform: rotate(-5deg) translateX(8vw) translateY(6vh);
   }
 }
 

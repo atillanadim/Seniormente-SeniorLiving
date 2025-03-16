@@ -39,23 +39,43 @@
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Adicionado para alinhar verticalmente */
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
-    margin: 0 15px;
+  margin: 0 15px;
+  display: flex; /* Adicionado para garantir alinhamento consistente */
+  align-items: center; /* Adicionado para alinhar verticalmente */
+  height: 100%; /* Garante que todos os itens tenham a mesma altura */
+}
+/* Correção específica para o dropdown "Quem Somos" */
+.nav-links li.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.nav-links li.dropdown > a {
+  display: inline-flex; /* Alterado para inline-flex */
+  align-items: center;
+  height: 100%;
+  padding: 0; /* Remover padding que pode estar causando o desalinhamento */
 }
 
+/* Garantir que todos os links tenham o mesmo alinhamento vertical */
 .nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 16px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  line-height: normal; /* Normaliza a altura da linha */
+  display: flex; /* Garante comportamento consistente */
+  align-items: center; /* Alinha verticalmente */
 }
 
 .nav-links a:hover {
@@ -109,6 +129,8 @@
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 100%; /* Posiciona exatamente abaixo do item pai */
+    left: 0;
     background-color: #f9f9f9;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -116,7 +138,7 @@
     border-radius: 5px;
     overflow: hidden;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(10px);
     transition: opacity 0.3s, transform 0.3s;
 }
 
@@ -141,6 +163,23 @@
 .dropdown-content a:hover {
     background-color: #f1f1f1;
     color: #e67e22;
+}
+
+
+
+/* Desativar o dropdown do item "Quem Somos" apenas em dispositivos móveis */
+@media (max-width: 768px) {
+  /* Desativar apenas o dropdown de "Quem Somos" em dispositivos móveis */
+  .nav-links li.dropdown.quem-somos:hover .dropdown-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  /* Garantir que o dropdown não apareça mesmo quando clicado em dispositivos móveis */
+  .nav-links li.dropdown.quem-somos .dropdown-content {
+    display: none !important;
+  }
 }
 
 /* Enhanced responsiveness for the navbar */
@@ -291,7 +330,10 @@
       padding: 8px 20px;
       font-size: 14px;
     }
+   
   }
+  
+
   
   /* Very small devices */
   @media (max-width: 360px) {
