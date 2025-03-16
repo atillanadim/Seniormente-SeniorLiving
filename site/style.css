@@ -15,19 +15,19 @@ body, html {
 }
 
 /* Hero section styles */
+/* Estilos atualizados para a seção hero */
 .hero {
   position: relative;
   width: 100vw;
   height: 80vh;
-  background: url('src/banner-inicial.png') no-repeat center center;
+  background: url("src/banner-inicial.png") no-repeat center center;
   background-size: cover;
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   color: white;
-  /* Remove any potential margin that might cause white space */
   left: 50%;
   right: 50%;
   margin-left: -50vw;
@@ -41,26 +41,91 @@ body, html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
 }
 
 .hero-content {
-  position: relative; /* Changed from absolute to relative */
-  padding: 40px;
-  max-width: 500px;
-  z-index: 1; /* Ensure content stays above overlay */
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
 }
 
-.hero-content h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+.values-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.value-word {
+  font-family: "Satisfy", cursive; /* Fonte cursiva similar à da imagem */
+  font-size: 5rem;
   line-height: 1.2;
   margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transform: rotate(-5deg); /* Leve rotação para dar o efeito da imagem */
+  color:#e67e22;; /* Cor marrom-avermelhada similar à da imagem */
 }
 
-.hero-content h1 span {
-  color: #e67e22;
+.cuidar {
+  transform: rotate(-5deg)  translateY(-67px) translateX(-600px);
 }
+
+.humanizar {
+  font-size: 5.5rem;
+  transform: rotate(-4deg) translateX(-87px) translateY(45px);
+
+}
+
+.respeitar {
+  transform: rotate(-5deg) translateX(600px) translateY(100px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .value-word {
+    font-size: 3.5rem;
+  }
+
+  .humanizar {
+    font-size: 4rem;
+  }
+
+  .cuidar {
+    transform: rotate(-8deg) translateX(-20px);
+  }
+
+  .respeitar {
+    transform: rotate(-3deg) translateX(20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .value-word {
+    font-size: 2.8rem;
+  }
+
+  .humanizar {
+    font-size: 3.2rem;
+  }
+
+  .cuidar {
+    transform: rotate(-5deg) translateX(-10px);
+  }
+
+  .respeitar {
+    transform: rotate(-2deg) translateX(10px);
+  }
+}
+
+
 
 .servicos-prestados{
   color:#125f6b;

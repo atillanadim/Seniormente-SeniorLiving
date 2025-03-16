@@ -26,7 +26,8 @@ $site_name = "Seniormente"; // Nome do seu site
 // Caminhos para os almanaques (URLs completas)
 $almanaques = [
     "Março" => "https://seniormente.com/almanaques/almanaque-seniormente-marco.pdf",
-    "Fevereiro" => "https://seniormente.com/almanaques/Almanaque sénior fev25.pdf"
+    "Fevereiro" => "https://seniormente.com/almanaques/Almanaque sénior fev25.pdf",
+    "Janeiro" => "https://seniormente.com/almanaques/Almanaque sénior jan25.pdf"
   
 ];
 
@@ -87,8 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 // Constrói o corpo do email com os links para os almanaques
                 $message = "<html><body>";
-                $message .= "<h2>Obrigado por se inscrever em nossa newsletter!</h2>";
-                $message .= "<p>Agora você receberá atualizações sobre nossos novos almanaques e conteúdos.</p>";
+                $message .= "<h2>Obrigado por se inscrever na nossa newsletter!</h2>";
+                $message .= "<p>Agora receberá atualizações sobre os nossos novos almanaques e conteúdos.</p>";
                 $message .= "<h3>Conforme prometido, aqui estão os links para nossos almanaques:</h3>";
                 $message .= "<ul>";
                 
