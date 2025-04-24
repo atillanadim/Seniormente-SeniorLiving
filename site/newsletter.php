@@ -25,10 +25,12 @@ $site_name = "Seniormente"; // Nome do seu site
 
 // Caminhos para os almanaques (URLs completas)
 $almanaques = [
+    "Abril" => "https://seniormente.com/almanaques/Almanaque sénior abr25.pdf",
     "Março" => "https://seniormente.com/almanaques/almanaque-seniormente-marco.pdf",
     "Fevereiro" => "https://seniormente.com/almanaques/Almanaque sénior fev25.pdf",
     "Janeiro" => "https://seniormente.com/almanaques/Almanaque sénior jan25.pdf"
-  
+
+    
 ];
 
 // Inicializa a resposta
